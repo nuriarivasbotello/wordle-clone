@@ -12,8 +12,14 @@ import '../scss/styles.scss';
 // Crear animaciones
 const containerElement = document.getElementById('container-letters');
 const formElement = document.getElementById('form');
+const inputElement = document.getElementById('input-form');
+const footerElement = document.getElementById('footer');
+const mainElement = document.getElementById('main');
 const fiveNames = ['sergio', 'carlos', 'daniel', 'aurora'];
-
+const tries = 6;
+const numberLetters = 6;
+let round = 0;
+let row = 0;
 // palabra aleatoria del array para iniciar el juego
 const randomWord = () => {
   const aleatory = fiveNames[Math.floor(Math.random() * fiveNames.length)];
@@ -22,23 +28,43 @@ const randomWord = () => {
 randomWord();
 const inputLength = word => {
   if (word.length < 6) {
+    formElement.textContent = '';
     const newMessage = document.createElement('p');
     newMessage.textContent = 'Palabra muy corta, usa 6';
-    formElement.append(newMessage);
-    console.log('Hola');
+    footerElement.append(newMessage);
   } else if (word.length === 6) {
     const newMessage = document.createElement('p');
     newMessage.textContent = 'Perfecto';
-    formElement.append(newMessage);
+    footerElement.append(newMessage);
   } else {
     const newMessage = document.createElement('p');
     newMessage.textContent = 'Muchas letras en tu palabra, usa solo 6';
-    formElement.append(newMessage);
+    footerElement.append(newMessage);
   }
 };
-
+const createRow = () => {
+  const fragment = document.createDocumentFragment();
+  for (let i = 1; i <= tries; i++) {
+    const newRow = document.createElement('div');
+    newRow.classList.add('container-letters');
+    fragment.append(newRow);
+    for (let i = 1; i <= numberLetters; i++) {
+      const letter = document.createElement('span');
+      letter.classList.add('letter');
+      newRow.append(letter);
+    }
+  }
+  mainElement.append(fragment);
+};
+createRow();
+const paintedWord = (word, number) => {
+  for (let i = 0; i <= word.length - 1; i++) {
+    mainElement.children[number].children[i].textContent = word[i];
+  }
+};
 formElement.addEventListener('submit', event => {
   event.preventDefault();
+  paintedWord(event.target.word.value, round);
   inputLength(event.target.word.value);
   event.target.word.value = '';
 });
