@@ -16,49 +16,25 @@
     <title>Wordle</title>
   </head>
   <body>
-    <h1 class="title" id="title" ></h1>
-    <div class="container-letters" id="container-letters">
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-      <p class="letter letter--gray" id="letter">n</p>
-      <p class="letter letter--green" id="letter">o</p>
-      <p class="letter letter--yellow" id="letter">m</p>
-      <p class="letter letter--purple" id="letter">b</p>
-      <p class="letter letter--blue" id="letter">r</p>
-      <p class="letter letter--red" id="letter">e</p>
-        
-    </div>
-    <form class="form" id="form">
-        <input class="word" type="text" placeholder="Insert the word" />
-      </form>
+    <header class="header">
+
+      <h1 class="title" id="title" >WORDLE</h1>
+    </header>
+    <main class="main">
+
+      <div class="container-letters" id="container-letters">
+        <span class="letter" >n</span>
+        <span class="letter" >o</span>
+        <span class="letter" >m</span>
+        <span class="letter" >b</span>
+        <span class="letter" >r</span>
+        <span class="letter" >e</span>
+      </div>
+      <form class="form" id="form">
+          <input class="word" name="word" id="input-form" type="text" maxlength="6" placeholder="Insert the word" />
+      
+        </form>
+    </main>
     <script
       type="module"
       src="./js/index.js"
