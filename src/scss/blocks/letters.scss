@@ -1,12 +1,25 @@
-.container-letters{
-    width: 80px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-gap: 10px;
+.container-letters {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+  gap: 10px;
 }
-.letter{
-    padding:30px;
-    border: 2px solid black;
+.letter {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(255, 255, 255);
+  align-items: center;
+}
+.letter--gray {
+  background-color: rgb(76, 76, 76);
+}
+.letter--green {
+  background-color: green;
+}
+.letter--yellow {
+  background-color: rgb(255, 247, 0);
 }
