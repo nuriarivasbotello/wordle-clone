@@ -63,14 +63,30 @@ const paintedWord = word => {
 // Verificar que la palabra que yo meta si las letras no están se pinten en gris (recorriendo)
 // Crear animaciones
 const comparationWord = word => {
+  let wordToCheck = aleatoryWord;
+  console.log(wordToCheck);
   for (let i = 0; i < word.length; i++) {
     if (word[i] === aleatoryWord[i]) {
       mainElement.children[round].children[i].classList.add('letter--green');
+      wordToCheck = wordToCheck.replace(word[i], '*');
     }
-    for (let i = 0; i < word.length; i++) {
-      if (!aleatoryWord.includes(word[i])) {
-        mainElement.children[round].children[i].classList.add('letter--gray');
-      }
+  }
+  console.log(wordToCheck);
+
+  for (let i = 0; i < word.length; i++) {
+    if (!wordToCheck.includes(word[i])) {
+      mainElement.children[round].children[i].classList.add('letter--gray');
+    }
+    if (
+      !mainElement.children[round].children[i].classList.contains(
+        'letter--green'
+      ) &&
+      !mainElement.children[round].children[i].classList.contains(
+        'letter--gray'
+      )
+    ) {
+      mainElement.children[round].children[i].classList.add('letter--yellow');
+      wordToCheck = wordToCheck.replace(word[i], '*');
     }
   }
 };
