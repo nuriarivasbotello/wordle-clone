@@ -90,6 +90,7 @@ const comparationWord = word => {
     }
   }
 };
+const correctResult = () => {};
 
 formElement.addEventListener('submit', event => {
   event.preventDefault();
